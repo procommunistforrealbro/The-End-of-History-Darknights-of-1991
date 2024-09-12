@@ -1,7 +1,24 @@
 ﻿CHARACTERS = {
 	c:USS ?= {
 		create_character = {
-			template = usa_clinton_character_template
+			first_name = George 
+			last_name = Bush
+			historical = yes
+			culture = cu:dixie
+			ruler = yes
+			ig_leader = yes
+			interest_group = ig_conservatives
+			ideology = ideology_jacksonian_democrat
+			birth_date = 1924.6.12
+			dna = dna_andrew_jackson
+			traits = {
+				expert_political_operator
+			}
+			on_created = {
+				set_variable = {
+					name = is_George_Bush
+				}				
+			}
 		}
 
 	}

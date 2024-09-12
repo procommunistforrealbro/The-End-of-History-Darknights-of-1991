@@ -1,5 +1,5 @@
 ﻿NGame = {
-	START_DATE = "1999.1.1" 
+	START_DATE = "1991.1.1" 
 	END_DATE = "2156.1.1" 
 	SAVE_VERSION = 0
 	MP_LAG_TICKS_BOUNDS = 28 # Host will advance up to a week ahead of players ( 7 * 4 )
