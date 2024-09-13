@@ -5,7 +5,11 @@
 	index = 8
 
 	ideologies = {
-		ideology_nonexistent
+		ideology_wel_expanded_public_welfare
+		ideology_ban_averse
+		ideology_cit_liberal_nationalist
+		ideology_dop_moderate_democrat
+		ideology_eco_laissez_faire
 	}
 	
 	enable = {

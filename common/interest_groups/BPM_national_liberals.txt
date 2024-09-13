@@ -5,7 +5,20 @@
 	index = 10
 
 	ideologies = {
-		ideology_nonexistent
+		ideology_gov_liberal_republican
+		ideology_dop_moderate_democrat
+		ideology_sta_powerful_state
+		ideology_cit_closed_internationalist
+		ideology_rel_secularist
+		ideology_mil_patriotic
+		ideology_eco_laissez_faire
+		ideology_wel_market_welfare
+		ideology_fem_gender_egalitarian
+		ideology_ban_averse 
+		# Vanilla
+		ideology_liberal
+		ideology_laissez_faire
+		ideology_individualist
 	}
 	
 	enable = {

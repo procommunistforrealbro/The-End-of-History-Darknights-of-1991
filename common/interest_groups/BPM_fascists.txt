@@ -5,11 +5,16 @@
 	index = 11
 	
 	ideologies = {
-		ideology_nonexistent
-	}
-	
-	enable = {
-		game_date > 1900.1.1
+		ideology_cit_ethnonationalist
+		ideology_eco_autarky
+		ideology_pro_single_party
+		ideology_dop_state_power
+		ideology_fem_benevolent_sexism
+		ideology_gov_liberal_republican
+		ideology_jingoist
+		ideology_rel_moralist
+		ideology_sta_subjugated_security_state
+		ideology_wel_expanded_public_welfare
 	}
 	
 	on_enable = {

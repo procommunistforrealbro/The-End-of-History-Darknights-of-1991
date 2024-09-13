@@ -5,12 +5,16 @@
 	index = 9
 
 	ideologies = {
-		ideology_nonexistent
+		ideology_eco_proletarian_economy
+		ideology_wel_expanded_public_welfare
+		ideology_rel_atheist
+		ideology_sta_minimal_state
+		ideology_gov_radical_proletarian
+		ideology_ban_socialist_antifascist
+		ideology_cit_internationalist
+		ideology_dop_anarchist
+		ideology_fem_gender_egalitarian
 	}
-	
-	enable = {
-		has_global_variable = global_anarchists_split_var
-	}	
 	
 	on_enable = {
 		ig:ig_anarchists = {

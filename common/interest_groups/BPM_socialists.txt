@@ -5,7 +5,15 @@
 	index = 16
 	
 	ideologies = {
-		ideology_nonexistent
+		ideology_wel_expanded_public_welfare
+		ideology_rel_atheist
+		ideology_fem_gender_egalitarian
+		ideology_cit_internationalist
+		ideology_dop_radical_democrat
+		ideology_sta_progressive_state
+		ideology_gov_liberal_republican
+		ideology_rel_secularist
+		ideology_eco_interventionist
 	}
 	
 	enable = {
@@ -22,13 +30,8 @@
 			limit = {
 				OR = {
 					has_technology_researched = egalitarianism
-					AND = {
-						bpm_country_is_in_europe = yes
-						has_global_variable = march_to_radicalism_complete_var
-					}
 				}				
 			}
-			bpm_initialize_socialists = yes
 		}
 	}
 	on_disable = {}

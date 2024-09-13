@@ -5,8 +5,15 @@
 	index = 7
 
 	ideologies = {
-		ideology_nonexistent
-	}
+		ideology_dop_unionist
+		ideology_wel_expanded_public_welfare
+		ideology_fem_gender_egalitarian
+		ideology_rel_secularist
+		ideology_ban_averse
+		ideology_eco_interventionist
+		ideology_gov_liberal_republican
+		ideology_cit_internationalist
+		}
 	
 	enable = {
 		always = yes

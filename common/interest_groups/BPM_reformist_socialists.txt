@@ -5,12 +5,18 @@
 	index = 14
 	
 	ideologies = {
-		ideology_nonexistent
+		ideology_wel_expanded_public_welfare
+		ideology_sta_minimal_state
+		ideology_rel_radical_secularist
+		ideology_mil_antimilitarist
+		ideology_gov_liberal_republican
+		ideology_fem_gender_egalitarian
+		ideology_ban_averse
+		ideology_cit_internationalist
+		ideology_dop_moderate_democrat
+		ideology_eco_socialist_autarky
 	}
 	
-	enable = {
-		has_global_variable = global_socialists_split_var
-	}
 	
 	on_enable = {
 		ig:ig_reformist_socialists = {
