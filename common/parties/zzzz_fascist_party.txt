@@ -284,9 +284,6 @@
 	icon = {
 		default = "/gfx/interface/icons/political_parties/fascists.dds"
 	}
-	unlocking_technologies = {
-		political_agitation
-	}
 	available_for_interest_group = { 
 		bpm_ig_enabled = yes
 		NOT = { bpm_is_party_banned = { PARTY = fascist_party } }

@@ -1,0 +1,173 @@
+﻿# Bastion of the Landowners
+# Can also appeal to the Devout, PB, and Industrialists
+
+centrist_party = {
+	color = rgb{ 158 158 158 }
+	name = {
+		first_valid = {
+
+			triggered_desc = {
+				desc = party_us_reform
+				trigger = {
+					exists = c:USA
+					THIS = c:USA
+				}
+			}
+
+		}
+	}
+	icon = {
+		default = "/gfx/interface/icons/political_parties/conservatism.dds"
+	}
+	# THIS IS RUN ONLY ONCE AT GAME START
+	valid_for_country = {
+		always = yes
+	}
+    available_for_interest_group = {
+        bpm_ig_enabled = yes
+        NOT = { bpm_is_party_banned = { PARTY = centrist_party } }
+        owner = {
+            country_has_voting_franchise = yes
+        }
+        # The Far right and Left wont be alowed into the Reform party
+        OR = {
+            owner = { this = c:USA }
+            NOR = { 
+                bpm_ig_is_socialist = yes
+				bpm_ig_is_fascist = yes
+            }
+        }	
+        leader = {
+            OR = {
+                owner = { this = c:USA }
+                NOR = {
+                    bpm_leader_is_socialist = yes
+                    bpm_leader_is_fascist = yes
+							
+					
+                }
+            }
+        }
+    }
+	join_weight = {
+		value = {
+			value = 0
+			desc = "base_value"
+		}
+		
+		
+		if = { # various Centrist are inclined towards Centrist parties
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology:ideology_moderate	
+						has_ideology = ideology_center_leader						
+					}
+				}
+			}
+			add = {
+				value = 50
+				desc = ""
+			}
+		}			
+		
+		
+		if = {
+			limit = {
+				leader = { has_variable = centrist_party_leader }
+			}
+			add = {
+				value = 100
+				desc = "bpm_historical_leader"
+			}
+		}
+		if = {
+			limit = {
+				leader = { has_variable = anti_centrist_party_leader }
+			}
+			add = {
+				value = -100
+				desc = "bpm_historical_leader"
+			}
+		}	
+		if = {
+			limit = {
+				var:bpm_current_party ?= {
+					is_party_type = centrist_party
+					has_party_member = prev
+				}
+			}
+			add = {
+				value = bpm_party_loyalty_values
+			}
+		}
+		if = {
+			limit = {
+				owner = { bpm_country_has_two_party_system = yes }
+			}
+			add = {
+				value = -2
+				desc = "bpm_two_party_system"
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					owner = { this = c:USA }
+					OR = {
+						is_interest_group_type = ig_trade_unions
+						is_interest_group_type = ig_rural_folk
+					}
+				}
+			}
+			add = {
+				value = 15
+				desc = "bpm_second_party_system"
+			}
+		}
+		if = {
+			limit = {
+				owner = { bpm_country_has_historical_two_party_system = yes }
+			}
+			add = {
+				leader = {
+					value = popularity
+					if = {
+						limit = { popularity < 0 }
+						multiply = -1
+					}
+					add = 1
+					modulo = 2
+					multiply = 5
+
+				}
+				desc = "bpm_from_coalition"
+			}
+		}
+		
+		
+		if = { # centrist love centrist
+			limit = {
+				bpm_ig_is_moderate_conservative  = yes
+				bpm_ig_is_moderate_socialist = yes
+				bpm_ig_is_moderate_liberal = yes
+			}
+			add = {
+				value = 3
+				desc = "bpm_from_liberal_conservative_ig"
+			}
+		}
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_moderate_conservative  = yes
+				bpm_ig_is_moderate_socialist = yes
+				bpm_ig_is_moderate_liberal = yes
+			}
+			add = {
+				value = 15
+				desc = "bpm_from_main_conservative_ig"
+			}
+		}
+
+	}
+}

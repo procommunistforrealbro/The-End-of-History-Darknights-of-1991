@@ -59,15 +59,22 @@
  party_hun_radicals:0 "Independence Party"
 
 # USA
+
+ party_usa_republicans:0 "Republican Party"
+ party_usa_democrat:0 "Democratic party" 
+
+ party_us_reform:0 "Reform Party"
+
  party_reactionary_usa:0 "[SCOPE.GetRootScope.GetCountry.GetCustom('usa_reactionary_party_name')]"
  party_usa_know_nothings:0 "American Party"
  party_usa_redeemers:0 "Democratic Party (Redeemers)"
 
  party_free_soil_party:0 "Free Soil Party"
 
+
+
  party_liberal_usa:0 "[SCOPE.GetRootScope.GetCountry.GetCustom('usa_liberal_party_name')]"
- party_usa_whigs:0 "Whig Party"
- party_usa_republicans:0 "Republican Party"
+
 
  party_radical_usa:0 "[SCOPE.GetRootScope.GetCountry.GetCustom('usa_radical_party_name')]"
  party_usa_anti_masonic:0 "Anti-Masonic Party"

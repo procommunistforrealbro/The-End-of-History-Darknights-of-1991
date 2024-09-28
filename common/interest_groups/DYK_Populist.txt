@@ -1,19 +1,15 @@
-﻿ig_market_liberals = {
-	color = hsv{ 184 170 83 }
-	texture = "gfx/interface/icons/ig_icons/market_liberals.dds"
+﻿ig_Populist = {
+	color = rgb{ 173 173 173 }
+	texture = "gfx/interface/icons/ig_icons/centrist.dds"
 	layer = "revolution_dynamic_industrialists"
 	index = 12
 	
 	ideologies = {
-		ideology_eco_laissez_faire
-		ideology_ban_opposed
-		ideology_cit_internationalist
+		ideology_gov_radical_republican
 		ideology_dop_radical_democrat
+		ideology_sta_weak_state
+		ideology_rel_secularist
 		ideology_fem_gender_egalitarian
-		ideology_wel_market_welfare
-		ideology_mil_antimilitarist
-		ideology_rel_atheist
-		ideology_sta_minimal_state
 	}
 	
 	enable = {
@@ -21,10 +17,10 @@
 	}
 	
 	on_enable = {
-		ig:ig_market_liberals = {
-			# set_ig_trait = ig_trait:ig_trait_urban_systematic_corruption
-			set_ig_trait = ig_trait:ig_trait_urban_well_oiled_machine
-			set_ig_trait = ig_trait:ig_trait_urban_systematic_opposition
+		ig:ig_Populist = {
+			# set_ig_trait = ig_trait:ig_trait_left_systematic_corruption
+			set_ig_trait = ig_trait:ig_trait_left_bastion_of_freedom
+			set_ig_trait = ig_trait:ig_trait_left_systematic_opposition
 		}
 	}
 	on_disable = {}
@@ -37,11 +33,7 @@
 				NOT = {
 					is_country_type = decentralized
 				}
-				ig:ig_market_liberals ?= {
-					NOT = {
-						has_ideology = ideology:ideology_nonexistent
-					}
-				}
+				has_technology_researched = rationalism
 			}
 		}
 	}
@@ -77,7 +69,7 @@
 			}
 			add = {
 				desc = "MIDDLE_CLASS"
-				value = 20
+				value = 30
 			}
 		}
 
@@ -96,14 +88,14 @@
 					NOT = { is_pop_type = clergymen }
 				}
 				add = {
-					value = 80
+					value = 100
 					desc = "URBAN_MIDDLE_CLASS"
 				}
 			}
 			else_if = {
 				limit = { strata = rich }
 				add = {
-					value = 60
+					value = 50
 					desc = "URBAN_UPPER_CLASS"
 				}
 			}
@@ -124,6 +116,7 @@
 					value = 100
 				}
 			}
+
 			multiply = {
 				desc = "LEADER_POPULARITY"
 				scope:interest_group = {
@@ -167,8 +160,13 @@
 	}
 	
 	monarch_weight = {
-		value = 0.2
+		value = 0.75
 	}	
+
+	agitator_weight = {
+		value = 1.0
+		multiply = bpm_base_agitator_weight
+	}
 	
 	commander_weight = {
 		value = 1.0

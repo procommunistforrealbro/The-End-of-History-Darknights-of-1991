@@ -1,5 +1,5 @@
-﻿ig_market_liberals = {
-	color = hsv{ 184 170 83 }
+﻿ig_Classical_liberals = {
+	color = rgb{ 209 182 4 }
 	texture = "gfx/interface/icons/ig_icons/market_liberals.dds"
 	layer = "revolution_dynamic_industrialists"
 	index = 12
@@ -7,12 +7,11 @@
 	ideologies = {
 		ideology_eco_laissez_faire
 		ideology_ban_opposed
-		ideology_cit_internationalist
+		ideology_cit_closed_internationalist
 		ideology_dop_radical_democrat
 		ideology_fem_gender_egalitarian
 		ideology_wel_market_welfare
-		ideology_mil_antimilitarist
-		ideology_rel_atheist
+		ideology_rel_moralist
 		ideology_sta_minimal_state
 	}
 	
@@ -21,7 +20,7 @@
 	}
 	
 	on_enable = {
-		ig:ig_market_liberals = {
+		ig:ig_Classical_liberals = {
 			# set_ig_trait = ig_trait:ig_trait_urban_systematic_corruption
 			set_ig_trait = ig_trait:ig_trait_urban_well_oiled_machine
 			set_ig_trait = ig_trait:ig_trait_urban_systematic_opposition

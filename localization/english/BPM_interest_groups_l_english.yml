@@ -29,8 +29,6 @@
  ig_zapadniks_socialist:0 "Zapadniks (Socialist)"
  ig_zapadniks_socialist_desc:0 "Zapadniks believe that Russia must modernize using the example of the western countries (hence the name) in philosophy and culture. The Socialist Zapadniks follow the principles of the most radical version of Zapadnik thought - the one that believes that Europe, in spite of its progress, still has more to be done in order to realise the promises of Enlightment and strive to build a classless, equal society envisioned by thinkers like Marx and Bakunin."
 
- ig_independent_socialists:0 "Independent Socialists"
- ig_independent_socialists_desc:0 "Socialism refers to the broad tradition of leftists that oppose the anarchists in the First International. Specific tendencies can vary greatly, for instance, between the mass movement of the British Chartists, the secret societies of the Blanquists, the parliamentary politics of Lassalleans, and the scientific socialism of Marxists."
 
 # Anarchists
  ig_anarchists:0 "Anarchists"
@@ -212,6 +210,80 @@
  ig_fascists_desc:0 "An extreme-right ideology, fascism is difficult to define in specific terms. Generally characterized by national chauvinism, a reverence of the state, and a rabid hostility to any Left-wing or perceived foreign elements, it is just as much inundated with contradictions -- while fascists often espouse deeply traditional values, they also glorify the efficiency of modern industry and war. This strange coupling of traditionalism with modernity is part of what sets e.g. clerical fascism apart from traditional moralism, and Italian Futurism apart from socialism."
  ig_integralists:0 "Integralists"
  ig_integralists_desc:0 "$ig_fascists_desc$"
+
+
+#DYK
+ ig_Nationalist:0 "Nationalist"
+ ig_Nationalist_only_icon:0 "@ig_national_liberals!"
+ ig_Nationalist_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Classical_liberals:0 "Classical Liberals"
+ ig_Classical_liberals_only_icon:0 "@ig_national_liberals!"
+ ig_Classical_liberals_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Radical_liberals:0 "Radical libertarian"
+ ig_Radical_liberals_only_icon:0 "@ig_national_liberals!"
+ ig_Radical_liberals_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Populist_Right:0 "Populist Right"
+ ig_Populist_Right_only_icon:0 "@ig_national_liberals!"
+ ig_Populist_Right_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Paleoconservatism:0 "paleoconservatives"
+ ig_Paleoconservatism_only_icon:0 "@ig_national_liberals!"
+ ig_Paleoconservatism_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_neo_conservative:0 "neo conservatives"
+ ig_neo_conservative_only_icon:0 "@ig_national_liberals!"
+ ig_neo_conservative_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Populist:0 "Populist"
+ ig_Populist_only_icon:0 "@ig_national_liberals!"
+ ig_Populist_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_centrist:0 "centrist"
+ ig_centrist_only_icon:0 "@ig_national_liberals!"
+ ig_centrist_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_national_bolshevik:0 "National Bolshevik"
+ ig_national_bolshevik_only_icon:0 "@ig_national_liberals!"
+ ig_national_bolshevik_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+
+ ig_neoliberal:0 "neoliberals"
+ ig_neoliberal_only_icon:0 "@ig_national_liberals!"
+ ig_neoliberal_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_progressive:0 "progressives"
+ ig_progressive_only_icon:0 "@ig_national_liberals!"
+ ig_progressive_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Populist_Left:0 "Populist Left"
+ ig_Populist_Left_only_icon:0 "@ig_national_liberals!"
+ ig_Populist_Left_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_neoliberal:0 "Neo Liberal"
+ ig_neoliberal_only_icon:0 "@ig_national_liberals!"
+ ig_neoliberal_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_progressive:0 "Progressive"
+ ig_progressive_only_icon:0 "@ig_national_liberals!"
+ ig_progressive_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+
+ ig_Populist_Left:0 "Populist Left"
+ ig_Populist_Left_only_icon:0 "@ig_national_liberals!"
+ ig_Populist_Left_desc:0 "National liberals are conservative liberals that prioritize national unity with a strong state and a strong military. Examples include the German National Liberals, French Bonapartists, American War Democrats, and Japanese Imperialists."
+ 
+ 
+ ig_independent_socialists:0 "Old left Socialist"
+ ig_independent_socialists_desc:0 "Socialism refers to the broad tradition of leftists that oppose the anarchists in the First International. Specific tendencies can vary greatly, for instance, between the mass movement of the British Chartists, the secret societies of the Blanquists, the parliamentary politics of Lassalleans, and the scientific socialism of Marxists."
+
+
+
+
+
+
+
 
 
 # Nonideological

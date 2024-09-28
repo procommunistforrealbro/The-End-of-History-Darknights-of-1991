@@ -7,7 +7,7 @@
 			culture = cu:dixie
 			ruler = yes
 			ig_leader = yes
-			interest_group = ig_conservatives
+			interest_group = ig_neo_conservative
 			ideology = ideology_jacksonian_democrat
 			birth_date = 1924.6.12
 			dna = dna_andrew_jackson
@@ -17,6 +17,27 @@
 			on_created = {
 				set_variable = {
 					name = is_George_Bush
+				}				
+			}
+		}
+
+		create_character = {
+			first_name = Henry 
+			last_name =  Ross Perot
+			historical = yes
+			culture = cu:dixie
+			ruler = no
+			ig_leader = yes
+			interest_group = ig_centrist
+			ideology = ideology_moderate
+			birth_date = 1924.6.12
+			dna = dna_andrew_jackson
+			traits = {
+				expert_political_operator
+			}
+			on_created = {
+				set_variable = {
+					name = is_Henry_Ross_Perot
 				}				
 			}
 		}
