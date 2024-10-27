@@ -1,0 +1,192 @@
+﻿nat_party = {
+	color = { 128 77 0 }
+
+	name = {
+		first_valid = {
+
+			triggered_desc = {
+				desc = party_national_American
+				trigger = {
+					exists = c:USS
+					THIS = c:USS
+				}
+			}
+		}
+	}
+
+	icon = {
+		default = "/gfx/interface/icons/political_parties/fascists.dds"
+	}
+	available_for_interest_group = { 
+		bpm_ig_enabled = yes
+		NOT = { bpm_is_party_banned = { PARTY = nat_party } }
+		bpm_ig_is_left_wing = no
+		leader = { bpm_leader_is_left_wing = no }
+	}
+	
+	join_weight = {
+		value = {
+			value = -5
+			desc = "base_value"
+		}
+		if = {
+			limit = {
+				var:bpm_current_party ?= {
+					is_party_type = nat_party
+					has_party_member = prev
+				}
+			}
+			add = {
+				value = bpm_party_loyalty_values
+			}
+		}
+		if = { # fascists and general racists love fascism
+			limit = {
+				OR = {
+					bpm_ig_is_right_wing = yes
+					leader = { bpm_ig_is_right_wing = yes }
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_fascism"
+			}
+		}
+		
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_liberal_conservative = yes
+			}
+			add = {
+				value = 2
+				desc = "bpm_from_liberal_conservative_ig"
+			}
+		}
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_moderate_conservative = yes
+				bpm_ig_is_liberal_conservative = no
+			}
+			add = {
+				value = 10
+				desc = "bpm_from_main_conservative_ig"
+			}
+		}	
+
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_right_wing = yes
+			}
+			add = {
+				value = 12
+				desc = "bpm_from_main_conservative_ig"
+			}
+		}		
+		
+		if = { # strong fascists love fascism even more
+			limit = {
+				is_powerful = yes
+				OR = {
+					bpm_ig_is_right_wing = yes
+					leader = { bpm_ig_is_right_wing = yes }
+				}
+			}
+			add = {
+				value = 10
+				desc = "from_fascism_powerful"
+			}
+		}
+		if = { # fascism is a reactionary ideology
+			limit = {
+				bpm_ig_is_traditionalist = yes
+			}
+			add = {
+				value = 12
+				desc = "from_reactionaries"
+			}
+		}
+		if = { # conservative IG's will fall behind a stronger fascist party
+			limit = {
+				is_powerful = no
+				OR = {
+					bpm_ig_is_traditionalist = yes
+					bpm_ig_is_moderate_conservative = yes
+				}
+				owner = {
+					any_interest_group = {
+						is_powerful = yes
+						OR = {
+							bpm_ig_is_right_wing = yes
+							leader = { bpm_ig_is_right_wing = yes }
+						}
+					}
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_weak_conservatives_fascism"
+			}
+		}
+		if = { # various progressives dislike fascism
+			limit = {
+				leader = {
+					bpm_ig_is_liberal = yes	
+				}
+			}
+			add = {
+				value = -10
+				desc = "from_progressive_fascism"
+			}
+		}
+		if = { # moderates are scared of radical politics
+			limit = {
+				leader = { has_ideology = ideology:ideology_moderate }
+			}
+			add = {
+				value = -3
+				desc = "from_moderate"
+			}
+		}		
+		
+		if = { # patriots are inclined towards fascism
+			limit = {
+				bpm_ig_is_militaristic = yes
+			}
+			add = {
+				value = 4
+				desc = "from_patriot"
+			}
+		}
+		if = { # rural folk will ally with anti-migration faction
+			limit = {
+				law_stance = {
+					law = law_type:law_no_migration_controls
+					value < disapprove
+				}
+				owner = {
+					has_law = law_type:law_no_migration_controls
+				}
+			}
+			add = {
+				value = 5
+				desc = "from_isolationist"
+			}
+		}
+		if = { # conservatives like police
+			limit = {
+				law_stance = {
+					law = law_type:law_no_police
+					value < neutral
+				}
+				owner = {
+					has_technology_researched = law_enforcement
+					has_law = law_type:law_no_police
+				}
+			}
+			add = {
+				value = 3
+				desc = "from_no_police"
+			}
+		}
+	}
+}

@@ -1,46 +1,236 @@
 ﻿CHARACTERS = {
 	c:USS ?= {
 		create_character = {
-			first_name = George 
-			last_name = Bush
+			first_name = William
+			last_name = Luther Pierce
 			historical = yes
 			culture = cu:dixie
-			ruler = yes
+			birth_date = 1902.8.2
+			dna = dna_calhoun
 			ig_leader = yes
-			interest_group = ig_neo_conservative
-			ideology = ideology_jacksonian_democrat
-			birth_date = 1924.6.12
-			dna = dna_andrew_jackson
+			interest_group = ig_fascists
+			ideology = ideology_ethno_nationalist
 			traits = {
-				expert_political_operator
+				bigoted
+				experienced_political_operator
 			}
-			on_created = {
-				set_variable = {
-					name = is_George_Bush
-				}				
+		}
+		
+		create_character = {
+			first_name = Strom
+			last_name = Thurmond
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_Populist_Right
+			ideology = ideology_ethno_nationalist
+			traits = {
+				bigoted
+				experienced_political_operator
+			}
+		}	
+
+		create_character = {
+			first_name = Strom
+			last_name = Thurmond
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_reactionaries
+			ideology = ideology_ethno_nationalist
+			traits = {
+				bigoted
+				experienced_political_operator
+			}
+		}	
+
+		create_character = {
+			first_name = Roscoe
+			last_name = Bartlett
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_Nationalist
+			ideology = ideology_market_liberal
+			traits = {
+				experienced_political_operator
+			}
+		}		
+		
+		create_character = {
+			first_name = Bob
+			last_name = Dornan
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_national_liberals
+			ideology = ideology_market_liberal
+			traits = {
+				experienced_political_operator
+			}
+		}			
+
+
+		create_character = {
+			first_name = Ron
+			last_name = Paul
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_market_liberals
+			ideology = ideology_market_liberal
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+		create_character = {
+			first_name = Dave
+			last_name = Walter
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_Classical_liberals
+			ideology = ideology_market_liberal
+			traits = {
+				experienced_political_operator
 			}
 		}
 
 		create_character = {
-			first_name = Henry 
-			last_name =  Ross Perot
+			first_name = Ed
+			last_name = Crane
 			historical = yes
 			culture = cu:dixie
-			ruler = no
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_Radical_liberals
+			ideology = ideology_market_liberal
+			traits = {
+				experienced_political_operator
+			}
+		}		
+
+		create_character = {
+			first_name = Pat
+			last_name = Buchanan
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_Paleoconservatism
+			ideology = ideology_protectionist
+			traits = {
+				experienced_political_operator
+			}
+		}
+	
+		create_character = {
+			first_name = Donald
+			last_name = Rumsfeld
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_neo_conservative
+			ideology = ideology_protectionist
+			traits = {
+				experienced_political_operator
+			}
+		}
+		
+		create_character = {
+			first_name = George
+			last_name = Bush
+			historical = yes
+			ruler = yes			
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_conservatives
+			ideology = ideology_protectionist
+			traits = {
+				experienced_political_operator
+			}
+		}	
+
+		create_character = {
+			first_name = Henry
+			last_name = Ross Perot
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
 			ig_leader = yes
 			interest_group = ig_centrist
 			ideology = ideology_moderate
-			birth_date = 1924.6.12
-			dna = dna_andrew_jackson
 			traits = {
-				expert_political_operator
-			}
-			on_created = {
-				set_variable = {
-					name = is_Henry_Ross_Perot
-				}				
+				experienced_political_operator
 			}
 		}
 
+		create_character = {
+			first_name = Bill
+			last_name = Clinton
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_liberals
+			ideology = ideology_liberal_leader
+			traits = {
+				experienced_political_operator
+			}
+		}	
+		
+		create_character = {
+			first_name = Bernie
+			last_name = Sanders
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_progressive
+			ideology = ideology_social_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}			
+
+		create_character = {
+			first_name = John
+			last_name = Conyers
+			historical = yes
+			culture = cu:dixie
+			birth_date = 1902.8.2
+			dna = dna_calhoun
+			ig_leader = yes
+			interest_group = ig_reformist_socialists
+			ideology = ideology_social_democrat
+			traits = {
+				experienced_political_operator
+			}
+		}			
+		
+		
+	
 	}
 }

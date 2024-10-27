@@ -1,13 +1,13 @@
 ﻿# Bastion of the Landowners
 # Can also appeal to the Devout, PB, and Industrialists
 
-conservative_party = {
+Neo_Neo_conservative_party = {
 	color = hsv{ 0.57 1 1 }
 	name = {
 		first_valid = {
 
 			triggered_desc = {
-				desc = party_usa_republicans
+				desc = party_us_New_American
 				trigger = {
 					exists = c:USS
 					THIS = c:USS
@@ -25,20 +25,20 @@ conservative_party = {
 	}
 	available_for_interest_group = {
 		bpm_ig_enabled = yes
-		NOT = { bpm_is_party_banned = { PARTY = conservative_party } }
+		NOT = { bpm_is_party_banned = { PARTY = Neo_conservative_party } }
 		owner = {
 			country_has_voting_franchise = yes
 		}
 		# leftists will not join conservatives
 		OR = {
-			owner = { this = c:USS }
+			owner = { this = c:USA }
 			NOR = { 
 				bpm_ig_is_radical_left = yes
 			}
 		}
 		leader = {
 			OR = {
-				owner = { this = c:USS }
+				owner = { this = c:USA }
 				NOR = {
 					bpm_leader_is_socialist = yes
 					bpm_leader_is_radical_liberal = yes
@@ -53,7 +53,7 @@ conservative_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = conservative_party_leader }
+				leader = { has_variable = Neo_conservative_party_leader }
 			}
 			add = {
 				value = 100
@@ -62,7 +62,7 @@ conservative_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = anti_conservative_party_leader }
+				leader = { has_variable = anti_Neo_conservative_party_leader }
 			}
 			add = {
 				value = -100
@@ -72,12 +72,21 @@ conservative_party = {
 		if = {
 			limit = {
 				var:bpm_current_party ?= {
-					is_party_type = conservative_party
+					is_party_type = Neo_conservative_party
 					has_party_member = prev
 				}
 			}
 			add = {
 				value = bpm_party_loyalty_values
+			}
+		}
+		if = {
+			limit = {
+				owner = { bpm_country_has_two_party_system = yes }
+			}
+			add = {
+				value = 2
+				desc = "bpm_two_party_system"
 			}
 		}
 		if = {
@@ -96,40 +105,82 @@ conservative_party = {
 				}
 				desc = "bpm_from_moderatism"
 			}
-		}	
+		}
+		if = {
+			limit = {
+				owner = { bpm_country_has_historical_two_party_system = yes }
+			}
+			add = {
+				leader = {
+					value = popularity
+					if = {
+						limit = { popularity < 0 }
+						multiply = -1
+					}
+					add = 1
+					modulo = 2
+					multiply = 5
+
+				}
+				desc = "bpm_from_coalition"
+			}
+		}
 		
-		if = { # conservatives hate the left
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_liberal_conservative = yes
+			}
+			add = {
+				value = 3
+				desc = "bpm_from_liberal_conservative_ig"
+			}
+		}
+		
+		
+		if = { # conservatives love conservativism
 			limit = {
 				OR = {
-						bpm_ig_is_revolutionary_socialist = yes
-						bpm_ig_is_anarchist = yes
-						bpm_ig_is_radical_socialist = yes
-						bpm_ig_is_reformist_socialist = yes
-						bmp_ig_is_syndicalist = yes
-						bpm_ig_is_party_socialist = yes
-						bpm_ig_is_authoritarian_socialist = yes
-						bpm_ig_is_moderate_socialist = yes	
-						bpm_ig_is_proletarian_socialist = yes
-						bpm_ig_is_socialist = yes
-						bpm_ig_is_proletarian = yes
-						bpm_ig_is_labor = yes
-						bpm_ig_is_actually_desiring_socialism = yes
-						bpm_ig_is_socialist_trade_unions = yes	
+						bpm_ig_is_moderate_conservative = yes
+						bpm_ig_is_liberal_conservative = yes
+				}			
+			}
+			add = {
+				value = 15
+				desc = "bpm_from_main_conservative_ig"
+			}
+		}
+		
+		if = { # conservatives Will work with the right
+			limit = {
+				OR = {
+						bpm_ig_is_right_wing = yes
+						bpm_ig_is_radical_right = yes
 				}				
 			}
 			add = {
-				value = -25
+				value = 5
 				desc = "bpm_from_main_conservative_ig"
 			}
 		}		
 		
-		if = { # reactionaries like conservativism
+		
+		if = { # conservatives love conservativism
+		 	limit = {
+		 		is_interest_group_type = ig_neo_conservative
+		 	}
+			add = {
+				value = 5
+				desc = "bpm_from_main_conservative_ig"
+			}
+		}
+		
+		if = { # reactionaries like neo conservativism
 			limit = {
 				bpm_ig_is_moderate_conservative = no
 				bpm_ig_is_traditionalist = yes
 			}
 			add = {
-				value = 3
+				value = 8
 				desc = "bpm_from_reactionary_ig"
 			}
 		}
@@ -149,13 +200,13 @@ conservative_party = {
 					has_ideology = ideology:ideology_eco_interventionist
 					bpm_ig_is_agrarian = yes
 				}
-				owner = { NOT = { this = c:USS }}
 			}
 			add = {
-				value = 3
+				value = -5
 				desc = "bpm_from_protectionist"
 			}
 		}
+		
 		if = { # reactionaries will join weaker conservatives
 			limit = {
 				OR = { bpm_ig_is_traditionalist = yes }
@@ -163,7 +214,7 @@ conservative_party = {
 				owner = {
 					any_interest_group = {
 						is_powerful = no
-						is_interest_group_type = ig_conservatives
+						is_interest_group_type = ig_neo_conservative
 					}
 				}
 			}
@@ -172,13 +223,66 @@ conservative_party = {
 				desc = "bpm_from_weak_conservative_ig"
 			}
 		}
+		
+		if = { # far right will join weaker conservatives
+			limit = {
+				OR = { bpm_ig_is_radical_right = yes }
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = no
+						is_interest_group_type = ig_neo_conservative
+					}
+				}
+			}
+			add = {	
+				value = 5
+				desc = "bpm_from_weak_conservative_ig"
+			}
+		}		
+		
+		if = { # far right will join weaker conservatives
+			limit = {
+				OR = { bpm_ig_is_patriotic = yes }
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = no
+						is_interest_group_type = ig_neo_conservative
+					}
+				}
+			}
+			add = {	
+				value = 5
+				desc = "bpm_from_weak_conservative_ig"
+			}
+		}			
+		
+		if = { # far right will join weaker conservatives
+			limit = {
+				OR = { bpm_ig_is_right_wing = yes }
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = no
+						is_interest_group_type = ig_neo_conservative
+					}
+				}
+			}
+			add = {	
+				value = 5
+				desc = "bpm_from_weak_conservative_ig"
+			}
+		}				
+		
+		
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
-				exists = owner.py:conservative_party
+				exists = owner.py:Neo_conservative_party
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:conservative_party
+						is_member_of_party = owner.py:Neo_conservative_party
 						is_powerful = yes
 						leader = { has_ideology = ideology:ideology_jingoist_leader }
 					}
@@ -233,7 +337,7 @@ conservative_party = {
 						has_ideology = ideology:ideology_market_liberal
 					}
 				}
-				owner = { this = c:USS }
+				owner = { this = c:USA }
 			}
 			add = {
 				value = 3
@@ -341,7 +445,7 @@ conservative_party = {
 							leader = { has_ideology = ideology:ideology_bonapartist }
 						}
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = Neo_conservative_party }
 					}
 				}
 			}
@@ -440,7 +544,7 @@ conservative_party = {
 			limit = {
 				owner = {
 					bpm_country_has_unfree_labor = yes
-					THIS = c:USS
+					THIS = c:USA
 				}
 				is_interest_group_type = ig_devout
 			}
@@ -452,7 +556,7 @@ conservative_party = {
 		if = { # arbitrary weight for American reactionaries to stay with the dems (for now)
 			limit = {
 				owner = {
-					THIS = c:USS
+					THIS = c:USA
 				}
 				is_interest_group_type = ig_reactionaries
 			}
@@ -494,7 +598,7 @@ conservative_party = {
 					any_interest_group = {
 						has_ideology = ideology:ideology_wel_paternalistic_welfare
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = Neo_conservative_party }
 					}
 				}
 			}
@@ -516,7 +620,7 @@ conservative_party = {
 							bpm_ig_is_non_paternal_conservative = yes
 						}
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = Neo_conservative_party }
 					}
 				}
 			}
@@ -562,7 +666,7 @@ conservative_party = {
 				owner = {
 					ig:ig_conservatives = {
 						has_party = yes
-						party = { NOT = { is_party_type = conservative_party } }
+						party = { NOT = { is_party_type = Neo_conservative_party } }
 					}
 				}
 			}

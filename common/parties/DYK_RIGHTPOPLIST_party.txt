@@ -1,13 +1,13 @@
 ﻿# Bastion of the Landowners
 # Can also appeal to the Devout, PB, and Industrialists
 
-conservative_party = {
+right_pop_party = {
 	color = hsv{ 0.57 1 1 }
 	name = {
 		first_valid = {
 
 			triggered_desc = {
-				desc = party_usa_republicans
+				desc = party_us_right_pop
 				trigger = {
 					exists = c:USS
 					THIS = c:USS
@@ -25,7 +25,7 @@ conservative_party = {
 	}
 	available_for_interest_group = {
 		bpm_ig_enabled = yes
-		NOT = { bpm_is_party_banned = { PARTY = conservative_party } }
+		NOT = { bpm_is_party_banned = { PARTY = right_pop_party } }
 		owner = {
 			country_has_voting_franchise = yes
 		}
@@ -53,7 +53,7 @@ conservative_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = conservative_party_leader }
+				leader = { has_variable = right_pop_party_leader }
 			}
 			add = {
 				value = 100
@@ -62,7 +62,7 @@ conservative_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = anti_conservative_party_leader }
+				leader = { has_variable = anti_right_pop_party_leader }
 			}
 			add = {
 				value = -100
@@ -72,7 +72,7 @@ conservative_party = {
 		if = {
 			limit = {
 				var:bpm_current_party ?= {
-					is_party_type = conservative_party
+					is_party_type = right_pop_party
 					has_party_member = prev
 				}
 			}
@@ -80,6 +80,17 @@ conservative_party = {
 				value = bpm_party_loyalty_values
 			}
 		}
+		if = {
+			limit = {
+				owner = { bpm_country_has_two_party_system = yes }
+			}
+			add = {
+				value = 2
+				desc = "bpm_two_party_system"
+			}
+		}
+
+
 		if = {
 			limit = {
 				leader = { has_ideology = ideology:ideology_moderate }
@@ -96,33 +107,37 @@ conservative_party = {
 				}
 				desc = "bpm_from_moderatism"
 			}
-		}	
-		
-		if = { # conservatives hate the left
+		}
+
+
+		if = { # conservatives love conservativism
 			limit = {
-				OR = {
-						bpm_ig_is_revolutionary_socialist = yes
-						bpm_ig_is_anarchist = yes
-						bpm_ig_is_radical_socialist = yes
-						bpm_ig_is_reformist_socialist = yes
-						bmp_ig_is_syndicalist = yes
-						bpm_ig_is_party_socialist = yes
-						bpm_ig_is_authoritarian_socialist = yes
-						bpm_ig_is_moderate_socialist = yes	
-						bpm_ig_is_proletarian_socialist = yes
-						bpm_ig_is_socialist = yes
-						bpm_ig_is_proletarian = yes
-						bpm_ig_is_labor = yes
-						bpm_ig_is_actually_desiring_socialism = yes
-						bpm_ig_is_socialist_trade_unions = yes	
-				}				
+				bpm_ig_is_liberal_conservative = yes
 			}
 			add = {
-				value = -25
+				value = 3
+				desc = "bpm_from_liberal_conservative_ig"
+			}
+		}
+		if = { # conservatives love conservativism
+			limit = {
+				bpm_ig_is_moderate_conservative = yes
+				bpm_ig_is_liberal_conservative = no
+			}
+			add = {
+				value = 15
 				desc = "bpm_from_main_conservative_ig"
 			}
-		}		
-		
+		}
+		# if = { # conservatives love conservativism
+		# 	limit = {
+		# 		is_interest_group_type = ig_conservatives
+		# 	}
+		#	add = {
+		#		value = 10
+		#		desc = "bpm_from_main_conservative_ig"
+		#	}
+		#}
 		if = { # reactionaries like conservativism
 			limit = {
 				bpm_ig_is_moderate_conservative = no
@@ -175,10 +190,10 @@ conservative_party = {
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
-				exists = owner.py:conservative_party
+				exists = owner.py:right_pop_party
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:conservative_party
+						is_member_of_party = owner.py:right_pop_party
 						is_powerful = yes
 						leader = { has_ideology = ideology:ideology_jingoist_leader }
 					}
@@ -341,7 +356,7 @@ conservative_party = {
 							leader = { has_ideology = ideology:ideology_bonapartist }
 						}
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = right_pop_party }
 					}
 				}
 			}
@@ -494,7 +509,7 @@ conservative_party = {
 					any_interest_group = {
 						has_ideology = ideology:ideology_wel_paternalistic_welfare
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = right_pop_party }
 					}
 				}
 			}
@@ -516,7 +531,7 @@ conservative_party = {
 							bpm_ig_is_non_paternal_conservative = yes
 						}
 						has_party = yes
-						party = { is_party_type = conservative_party }
+						party = { is_party_type = right_pop_party }
 					}
 				}
 			}
@@ -562,7 +577,7 @@ conservative_party = {
 				owner = {
 					ig:ig_conservatives = {
 						has_party = yes
-						party = { NOT = { is_party_type = conservative_party } }
+						party = { NOT = { is_party_type = right_pop_party } }
 					}
 				}
 			}

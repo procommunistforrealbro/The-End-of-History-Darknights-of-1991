@@ -7,10 +7,10 @@ centrist_party = {
 		first_valid = {
 
 			triggered_desc = {
-				desc = party_us_reform
+				desc = party_us_Reform
 				trigger = {
-					exists = c:USA
-					THIS = c:USA
+					exists = c:USS
+					THIS = c:USS
 				}
 			}
 
@@ -31,7 +31,7 @@ centrist_party = {
         }
         # The Far right and Left wont be alowed into the Reform party
         OR = {
-            owner = { this = c:USA }
+            owner = { this = c:USS }
             NOR = { 
                 bpm_ig_is_socialist = yes
 				bpm_ig_is_fascist = yes
@@ -39,7 +39,7 @@ centrist_party = {
         }	
         leader = {
             OR = {
-                owner = { this = c:USA }
+                owner = { this = c:USS }
                 NOR = {
                     bpm_leader_is_socialist = yes
                     bpm_leader_is_fascist = yes
@@ -101,19 +101,11 @@ centrist_party = {
 				value = bpm_party_loyalty_values
 			}
 		}
-		if = {
-			limit = {
-				owner = { bpm_country_has_two_party_system = yes }
-			}
-			add = {
-				value = -2
-				desc = "bpm_two_party_system"
-			}
-		}
+		
 		if = {
 			limit = {
 				AND = {
-					owner = { this = c:USA }
+					owner = { this = c:USS }
 					OR = {
 						is_interest_group_type = ig_trade_unions
 						is_interest_group_type = ig_rural_folk
@@ -125,25 +117,7 @@ centrist_party = {
 				desc = "bpm_second_party_system"
 			}
 		}
-		if = {
-			limit = {
-				owner = { bpm_country_has_historical_two_party_system = yes }
-			}
-			add = {
-				leader = {
-					value = popularity
-					if = {
-						limit = { popularity < 0 }
-						multiply = -1
-					}
-					add = 1
-					modulo = 2
-					multiply = 5
 
-				}
-				desc = "bpm_from_coalition"
-			}
-		}
 		
 		
 		if = { # centrist love centrist

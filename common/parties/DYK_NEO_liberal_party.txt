@@ -1,19 +1,17 @@
 ﻿# Bastion of the Intelligenstia, also appeals to Industrialists
 # Can sometimes sway PB and Rural Folk when they have common interests
 
-liberal_party = {
+NeoLib_party = {
 	color = hsv{ 0.16 1 0.9 }
 	name = {
 		first_valid = {
-
 			triggered_desc = {
-				desc = party_usa_democrat
+				desc = party_NeoLib_USA
 				trigger = {
 					exists = c:USS
 					THIS = c:USS
 				}
 			}
-
 		}
 	}
 	icon = {
@@ -25,13 +23,13 @@ liberal_party = {
 	}
 	available_for_interest_group = {
 		bpm_ig_enabled = yes
-		NOT = { bpm_is_party_banned = { PARTY = liberal_party } }
+		NOT = { bpm_is_party_banned = { PARTY = NeoLib_party } }
 		owner = {
 			country_has_voting_franchise = yes
 		}
 		leader = { # far right won't join liberal parties
 			OR = {
-				owner = { this = c:USS }
+				owner = { this = c:USA }
 				NOR = {
 					bpm_leader_is_reactionary = yes
 					bpm_leader_is_fascist = yes
@@ -43,7 +41,7 @@ liberal_party = {
 			leader = { bpm_leader_is_radical_socialist = yes }
 		}
 		OR = {
-			owner = { this = c:USS }
+			owner = { this = c:USA }
 			NOR = {
 				bpm_ig_is_traditionalist = yes
 				bpm_ig_is_fascist = yes
@@ -51,7 +49,7 @@ liberal_party = {
 			}
 		}
 		OR = {
-			owner = { this = c:USS }
+			owner = { this = c:USA }
 			NOT = { # unreformed conservatives should not join the liberals
 				bpm_ig_is_non_paternal_conservative = yes 
 			}
@@ -64,7 +62,7 @@ liberal_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = liberal_party_leader }
+				leader = { has_variable = NeoLib_party_leader }
 			}
 			add = {
 				value = 100
@@ -73,7 +71,7 @@ liberal_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = anti_liberal_party_leader }
+				leader = { has_variable = anti_NeoLib_party_leader }
 			}
 			add = {
 				value = -100
@@ -83,7 +81,7 @@ liberal_party = {
 		if = {
 			limit = {
 				var:bpm_current_party ?= {
-					is_party_type = liberal_party
+					is_party_type = NeoLib_party
 					has_party_member = prev
 				}
 			}
@@ -91,10 +89,18 @@ liberal_party = {
 				value = bpm_party_loyalty_values
 			}
 		}
-
 		if = {
 			limit = {
-				leader = { has_ideology = ideology:ideology_moderate }
+				owner = { bpm_country_has_two_party_system = yes }
+			}
+			add = {
+				value = 2
+				desc = "bpm_two_party_system"
+			}
+		}
+		if = {
+			limit = {
+				leader = { has_ideology = ideology:ideology_atheist }
 			}
 			add = {
 				leader = {
@@ -108,15 +114,22 @@ liberal_party = {
 				desc = "bpm_from_moderatism"
 			}
 		}
-		
-		if = { # protectionists like conservatism
+		if = {
 			limit = {
-				leader = { has_ideology = ideology:ideology_protectionist }
-				owner = { this = c:USS }
+				owner = { bpm_country_has_historical_two_party_system = yes }
 			}
 			add = {
-				value = 3
-				desc = "bpm_from_protectionist"
+				leader = {
+					value = popularity
+					if = {
+						limit = { popularity < 0 }
+						multiply = -1
+					}
+					modulo = 2
+					multiply = 5
+
+				}
+				desc = "bpm_from_coalition"
 			}
 		}
 		if = { # liberals love liberalism
@@ -149,8 +162,8 @@ liberal_party = {
 			limit = {
 				leader = {
 					bpm_leader_is_liberal = yes
-					bpm_leader_is_radical_liberal = yes
-					bpm_leader_is_progressive_liberal = yes
+					bpm_leader_is_radical_liberal = no
+					bpm_leader_is_progressive_liberal = no
 				}
 			}
 			add = {
@@ -168,7 +181,7 @@ liberal_party = {
 				desc = "bpm_from_radical_leader"
 			}
 		}
-		if = { # neo liberals like laissez faire
+		if = { # liberals like laissez faire
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_eco_laissez_faire
@@ -176,10 +189,10 @@ liberal_party = {
 						has_ideology = ideology:ideology_market_liberal
 					}
 				}
-				owner = { NOT = { this = c:USS }}
+				owner = { NOT = { this = c:USA }}
 			}
 			add = {
-				value = 5
+				value = 3
 				desc = "bpm_from_laissez_faire"
 			}
 		}
@@ -215,7 +228,7 @@ liberal_party = {
 		}
 		if = { # radicals will cooperate with weaker liberals
 			limit = {
-				is_interest_group_type = ig_radicals
+				is_interest_group_type = ig_neoliberal
 				is_powerful = no
 				owner = {
 					any_interest_group = {
@@ -225,10 +238,26 @@ liberal_party = {
 				}
 			}
 			add = {	
-				value = 15
+				value = 20
 				desc = "bpm_from_liberal_coalition"
 			}
 		}
+		if = { # radicals will cooperate with weaker liberals
+			limit = {
+				is_interest_group_type = ig_liberals
+				is_powerful = no
+				owner = {
+					any_interest_group = {
+						is_powerful = no
+						is_interest_group_type = ig_neoliberal
+					}
+				}
+			}
+			add = {	
+				value = 20
+				desc = "bpm_from_liberal_coalition"
+			}
+		}		
 		if = { # against hereditary bureacrats
 			limit = {
 				law_stance = {
@@ -247,10 +276,10 @@ liberal_party = {
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
-				exists = owner.py:liberal_party
+				exists = owner.py:NeoLib_party
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:liberal_party
+						is_member_of_party = owner.py:NeoLib_party
 						is_powerful = yes
 						leader = { has_ideology = ideology:ideology_jingoist_leader }
 					}
@@ -471,7 +500,7 @@ liberal_party = {
 					bpm_leader_is_radical_liberal = no
 				}
 				owner = {
-					py:liberal_party ?= {
+					py:NeoLib_party ?= {
 						any_member = {
 							OR = {
 								bpm_ig_is_radical_liberal = yes
@@ -493,7 +522,7 @@ liberal_party = {
 					leader = { bpm_leader_is_radical_liberal = yes }
 				}
 				owner = {
-					py:liberal_party ?= {
+					py:NeoLib_party ?= {
 						any_member = {
 							bpm_ig_is_liberal_conservative = yes
 							leader = { bpm_leader_is_radical_liberal = no }
@@ -520,7 +549,7 @@ liberal_party = {
 				}
 				owner = {
 					ig:ig_liberals = {
-						party ?= { is_party_type = liberal_party }
+						party ?= { is_party_type = NeoLib_party }
 						leader = { bpm_leader_is_progressive_liberal = yes }
 					}
 				}
@@ -537,7 +566,7 @@ liberal_party = {
 					any_interest_group = {
 						has_ideology = ideology:ideology_wel_paternalistic_welfare
 						has_party = yes
-						party = { is_party_type = liberal_party }
+						party = { is_party_type = NeoLib_party }
 					}
 				}
 			}
@@ -632,7 +661,7 @@ liberal_party = {
 						bpm_ig_is_moderate_conservative = yes
 						bpm_ig_is_liberal_conservative = yes
 					}
-					leader = { has_ideology = ideology:ideology_moderate }
+					leader = { has_ideology = ideology:ideology_atheist }
 					leader = { bpm_leader_is_conservative = yes }
 				}
 				owner = { has_law = law_type:law_council_republic }

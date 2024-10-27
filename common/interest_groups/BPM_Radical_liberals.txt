@@ -7,7 +7,6 @@
 	ideologies = {
 		ideology_eco_laissez_faire
 		ideology_cit_internationalist
-		ideology_dop_radical_democrat
 		ideology_fem_gender_egalitarian
 		ideology_wel_market_welfare
 		ideology_rel_atheist
