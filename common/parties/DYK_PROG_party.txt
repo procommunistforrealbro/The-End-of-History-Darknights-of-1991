@@ -1,272 +1,15 @@
 ﻿# Bastion of the Intelligenstia, also appeals to Industrialists
 # Can sometimes sway PB and Rural Folk when they have common interests
 
-liberal_party = {
+PROG_party = {
 	color = hsv{ 0.16 1 0.9 }
 	name = {
 		first_valid = {
 			triggered_desc = {
-				desc = party_civilista_party
+				desc = party_PROGUSA
 				trigger = {
-					exists = c:PEU
-					THIS = c:PEU
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_arg
-				trigger = {
-					exists = c:ARG
-					THIS = c:ARG
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_gbr
-				trigger = {
-					exists = c:GBR
-					THIS = c:GBR
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_egy
-				trigger = {
-					exists = c:EGY
-					THIS = c:EGY
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_usa
-				trigger = {
-					exists = c:USA
-					THIS = c:USA
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_democrats
-				trigger = {
-					exists = c:SWI
-					THIS = c:SWI
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_fra
-				trigger = {
-					exists = c:FRA
-					THIS = c:FRA
-					}
-			}
-			triggered_desc = {
-				desc = party_liberal_por
-				trigger = {
-					exists = c:POR
-					THIS = c:POR
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_brz
-				trigger = {
-					country_has_primary_culture = cu:brazilian
-				}
-			}
-			triggered_desc = {
-				desc = party_kadets_party
-				trigger = {
-					exists = c:RUS
-					THIS = c:RUS
-				}
-			}
-			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:SWE
-					THIS = c:SWE
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_union
-				trigger = {
-					exists = c:NET
-					THIS = c:NET
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_league
-				trigger = {
-					exists = c:LUX
-					THIS = c:LUX
-				}
-			}
-			triggered_desc = {
-				desc = party_young_finnish_party
-				trigger = {
-					exists = c:FIN
-					THIS = c:FIN
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_hun
-				trigger = {
-					exists = c:HUN
-					THIS = c:HUN
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_party
-				trigger = {
-					exists = c:AUS
-					THIS = c:AUS
-				}
-			}
-			triggered_desc = {
-				desc = party_peoples_party
-				trigger = {
-					exists = c:CRO
-					THIS = c:CRO
-				}
-			}
-			triggered_desc = {
-				desc = party_society_for_progress
-				trigger = {
-					exists = c:PER
-					THIS = c:PER
-				}
-			}
-			triggered_desc = {
-				desc = party_blue_party
-				trigger = {
-					exists = c:PRG
-					THIS = c:PRG
-				}
-			}
-			triggered_desc = {
-				desc = party_great_liberal_party
-				trigger = {
-					exists = c:VNZ
-					THIS = c:VNZ
-				}
-			}
-			triggered_desc = {
-				desc = party_colorado_party
-				trigger = {
-					exists = c:URU
-					THIS = c:URU
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_chi
-				trigger = {
-					OR = {
-						AND = {
-							exists = c:CHI
-							THIS = c:CHI
-						}
-						country_has_primary_culture = cu:han
-						country_has_primary_culture = cu:hakka
-						country_has_primary_culture = cu:miao
-						country_has_primary_culture = cu:min
-						country_has_primary_culture = cu:zhuang
-						country_has_primary_culture = cu:yi
-						country_has_primary_culture = cu:yue
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_tur
-				trigger = {
-					exists = c:TUR
-					THIS = c:TUR
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_reform_party
-				trigger = {
-					exists = c:JAP
-					THIS = c:JAP
-				}
-			}
-			triggered_desc = {
-				desc = party_constitutional_party
-				trigger = {
-					exists = c:GRE
-					THIS = c:GRE
-					has_law = law_type:law_monarchy
-					ruler = {
-						culture = {
-							has_discrimination_trait = german_speaking
-						}
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_neoteristikon_komma
-				trigger = {
-					exists = c:GRE
-					THIS = c:GRE
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_ita
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_italian
-						country_has_primary_culture = cu:south_italian
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_national_liberal_party
-				trigger = {
-					country_has_primary_culture = cu:romanian
-				}
-			}
-			triggered_desc = {
-				desc = party_whig_party
-				trigger = {
-					country_has_primary_culture = cu:dixie
-					NOT = {
-						exists = c:USA
-						THIS = c:USA
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_progress_party
-				trigger = {
-					OR = {
-						country_has_primary_culture = cu:north_german
-						country_has_primary_culture = cu:south_german
-					}
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_spa
-				trigger = {
-					country_has_primary_culture = cu:spanish
-				}
-			}
-			triggered_desc = {
-				desc = party_venstre
-				trigger = {
-					country_has_primary_culture = cu:norwegian
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_mex
-				trigger = {
-					exists = c:MEX
-					THIS = c:MEX
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal_mex
-				trigger = {
-					exists = c:MEX
-					THIS = c:MEX
-				}
-			}
-			triggered_desc = {
-				desc = party_liberal
-				trigger = {
-					always = yes
+					exists = c:USS
+					THIS = c:USS
 				}
 			}
 		}
@@ -280,13 +23,13 @@ liberal_party = {
 	}
 	available_for_interest_group = {
 		bpm_ig_enabled = yes
-		NOT = { bpm_is_party_banned = { PARTY = liberal_party } }
+		NOT = { bpm_is_party_banned = { PARTY = PROG_party } }
 		owner = {
 			country_has_voting_franchise = yes
 		}
 		leader = { # far right won't join liberal parties
 			OR = {
-				owner = { this = c:USA }
+				owner = { this = c:USS }
 				NOR = {
 					bpm_leader_is_reactionary = yes
 					bpm_leader_is_fascist = yes
@@ -298,7 +41,7 @@ liberal_party = {
 			leader = { bpm_leader_is_radical_socialist = yes }
 		}
 		OR = {
-			owner = { this = c:USA }
+			owner = { this = c:USS }
 			NOR = {
 				bpm_ig_is_traditionalist = yes
 				bpm_ig_is_fascist = yes
@@ -306,7 +49,7 @@ liberal_party = {
 			}
 		}
 		OR = {
-			owner = { this = c:USA }
+			owner = { this = c:USS }
 			NOT = { # unreformed conservatives should not join the liberals
 				bpm_ig_is_non_paternal_conservative = yes 
 			}
@@ -319,7 +62,7 @@ liberal_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = liberal_party_leader }
+				leader = { has_variable = PROG_party_leader }
 			}
 			add = {
 				value = 100
@@ -328,7 +71,7 @@ liberal_party = {
 		}
 		if = {
 			limit = {
-				leader = { has_variable = anti_liberal_party_leader }
+				leader = { has_variable = anti_PROG_party_leader }
 			}
 			add = {
 				value = -100
@@ -338,7 +81,7 @@ liberal_party = {
 		if = {
 			limit = {
 				var:bpm_current_party ?= {
-					is_party_type = liberal_party
+					is_party_type = PROG_party
 					has_party_member = prev
 				}
 			}
@@ -373,43 +116,6 @@ liberal_party = {
 		}
 		if = {
 			limit = {
-				AND = {
-					owner = { this = c:USA }
-					OR = {
-						is_interest_group_type = ig_armed_forces
-						is_interest_group_type = ig_industrialists
-						is_interest_group_type = ig_landowners # awaiting Nullification Crisis JE
-					}
-					AND = {
-						game_date < 1856.1.1 # awaiting Nullification Crisis JE	
-						owner = { bpm_country_has_unfree_labor = yes }
-					}
-				}
-				
-			}
-			add = {
-				value = 10
-				desc = "bpm_second_party_system"
-			}
-		}
-		if = {
-			limit = {
-				AND = {
-					owner = { this = c:USA }
-					is_interest_group_type = ig_conservatives
-					AND = {
-						game_date < 1856.1.1 # awaiting Nullification Crisis JE	
-						owner = { bpm_country_has_unfree_labor = yes }
-					}
-				}
-			}
-			add = {
-				value = 50
-				desc = "bpm_second_party_system"
-			}
-		}
-		if = {
-			limit = {
 				owner = { bpm_country_has_historical_two_party_system = yes }
 			}
 			add = {
@@ -426,16 +132,22 @@ liberal_party = {
 				desc = "bpm_from_coalition"
 			}
 		}
-		if = { # protectionists like conservatism
+		
+		if = { # Progs like Progs
 			limit = {
-				leader = { has_ideology = ideology:ideology_protectionist }
-				owner = { this = c:USA }
+				OR = {
+					leader = {
+						has_ideology = ideology:ideology_social_democrat
+					}
+					has_ideology = ideology:ideology_socialist_leader
+				}
 			}
 			add = {
-				value = 3
-				desc = "bpm_from_protectionist"
+				value = 15
+				desc = "from_capitalism"
 			}
-		}
+		}		
+		
 		if = { # liberals love liberalism
 			limit = {
 				bpm_ig_is_liberal = yes
@@ -448,7 +160,7 @@ liberal_party = {
 		}
 		if = { # liberals love liberalism
 			limit = {
-				is_interest_group_type = ig_liberals
+				is_interest_group_type = ig_progressive
 			}
 			add = {
 				value = 10
@@ -467,7 +179,7 @@ liberal_party = {
 				leader = {
 					bpm_leader_is_liberal = yes
 					bpm_leader_is_radical_liberal = no
-					bpm_leader_is_progressive_liberal = no
+					bpm_leader_is_progressive_liberal = yes
 				}
 			}
 			add = {
@@ -477,7 +189,7 @@ liberal_party = {
 		}
 		if = { # radical liberal leaders like liberalism
 			limit = {
-				NOT = { is_interest_group_type = ig_radicals }
+				NOT = { is_interest_group_type = ig_progressive }
 				leader = { bpm_leader_is_radical_liberal = yes }
 			}
 			add = {
@@ -485,7 +197,7 @@ liberal_party = {
 				desc = "bpm_from_radical_leader"
 			}
 		}
-		if = { # liberals like laissez faire
+		if = { # liberals like laissez faire no
 			limit = {
 				OR = {
 					has_ideology = ideology:ideology_eco_laissez_faire
@@ -493,10 +205,10 @@ liberal_party = {
 						has_ideology = ideology:ideology_market_liberal
 					}
 				}
-				owner = { NOT = { this = c:USA }}
+				owner = { NOT = { this = c:USS }}
 			}
 			add = {
-				value = 3
+				value = -3
 				desc = "bpm_from_laissez_faire"
 			}
 		}
@@ -508,7 +220,7 @@ liberal_party = {
 				}
 			}
 			add = {
-				value = 4
+				value = 10
 				desc = "from_progressivism"
 			}
 		}
@@ -532,12 +244,12 @@ liberal_party = {
 		}
 		if = { # radicals will cooperate with weaker liberals
 			limit = {
-				is_interest_group_type = ig_radicals
+				is_interest_group_type = ig_progressive
 				is_powerful = no
 				owner = {
 					any_interest_group = {
 						is_powerful = no
-						is_interest_group_type = ig_liberals
+						is_interest_group_type = ig_progressive
 					}
 				}
 			}
@@ -564,10 +276,10 @@ liberal_party = {
 		if = { # armed forces will join if a more powerful member has jingoist leader
 			limit = {
 				is_interest_group_type = ig_armed_forces
-				exists = owner.py:liberal_party
+				exists = owner.py:PROG_party
 				owner = {
 					any_interest_group = {
-						is_member_of_party = owner.py:liberal_party
+						is_member_of_party = owner.py:PROG_party
 						is_powerful = yes
 						leader = { has_ideology = ideology:ideology_jingoist_leader }
 					}
@@ -687,7 +399,7 @@ liberal_party = {
 						has_law = law_type:law_legacy_slavery
 						has_law = law_type:law_slave_trade
 					}
-					ig:ig_liberals = {
+					ig:ig_progressive = {
 						leader = {
 							OR = {
 								has_ideology = ideology:ideology_abolitionist
@@ -788,7 +500,7 @@ liberal_party = {
 					bpm_leader_is_radical_liberal = no
 				}
 				owner = {
-					py:liberal_party ?= {
+					py:PROG_party ?= {
 						any_member = {
 							OR = {
 								bpm_ig_is_radical_liberal = yes
@@ -806,11 +518,11 @@ liberal_party = {
 		if = { # radicals don't love conservatives
 			limit = {
 				OR = {
-					is_interest_group_type = ig_radicals
+					is_interest_group_type = ig_progressive
 					leader = { bpm_leader_is_radical_liberal = yes }
 				}
 				owner = {
-					py:liberal_party ?= {
+					py:PROG_party ?= {
 						any_member = {
 							bpm_ig_is_liberal_conservative = yes
 							leader = { bpm_leader_is_radical_liberal = no }
@@ -836,8 +548,8 @@ liberal_party = {
 					}
 				}
 				owner = {
-					ig:ig_liberals = {
-						party ?= { is_party_type = liberal_party }
+					ig:ig_progressive = {
+						party ?= { is_party_type = PROG_party }
 						leader = { bpm_leader_is_progressive_liberal = yes }
 					}
 				}
@@ -854,7 +566,7 @@ liberal_party = {
 					any_interest_group = {
 						has_ideology = ideology:ideology_wel_paternalistic_welfare
 						has_party = yes
-						party = { is_party_type = liberal_party }
+						party = { is_party_type = PROG_party }
 					}
 				}
 			}
@@ -871,7 +583,7 @@ liberal_party = {
 						any_interest_group = {
 							is_powerful = no
 							OR = {
-								is_interest_group_type = ig_liberals
+								is_interest_group_type = ig_progressive
 								leader = { bpm_leader_is_moderate_liberal = yes }
 							}
 						}
@@ -911,7 +623,7 @@ liberal_party = {
 						any_interest_group = {
 							is_powerful = no
 							OR = {
-								is_interest_group_type = ig_liberals
+								is_interest_group_type = ig_progressive
 								leader = { bpm_leader_is_moderate_liberal = yes }
 							}
 						}
